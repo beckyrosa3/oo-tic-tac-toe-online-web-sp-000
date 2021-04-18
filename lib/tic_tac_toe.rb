@@ -26,17 +26,17 @@ class TicTacToe
     end
 
     def input_to_index(user_input)
-      @index = user_input.to_i-1
+      user_input.to_i-1
     end
 
     def move(index, token)
-      @board[index] = token
+      board[index] = token
     end
 
     def position_taken?(index)
-      if (@board[index] == "X") || (@board[index] == "O")
+      if (board[index] == "X") || (board[index] == "O")
         true
-      elsif @board[index] == " " || "" || nil
+      elsif board[index] == " " || "" || nil
         false
     end
   end
@@ -51,7 +51,7 @@ class TicTacToe
   end
 
   def turn_count
-    9 - @board.count(" ")
+    9 - board.count(" ")
   end
 
   def current_player
@@ -78,14 +78,14 @@ class TicTacToe
 
   def won?
     WIN_COMBINATIONS.detect do |win_combo|
-      @board[win_combo[0] ] == @board[win_combo[1] ] &&
-      @board[win_combo[1] ] == @board[win_combo[2] ] &&
+      board[win_combo[0] ] == board[win_combo[1] ] &&
+      board[win_combo[1] ] == board[win_combo[2] ] &&
       position_taken?(win_combo[0])
       end
     end
 
   def full?
-      @board.none? do |input|
+      board.none? do |input|
       input == " "
     end
   end
@@ -108,7 +108,7 @@ class TicTacToe
 
   def winner
     if won?
-      @board[won?[0]]
+      board[won?[0]]
     end
   end
 
