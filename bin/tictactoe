@@ -8,4 +8,4 @@ require_relative '../lib/tic_tac_toe.rb'
 
 #display_board
 
-display_board.new
+TicTacToe.new
